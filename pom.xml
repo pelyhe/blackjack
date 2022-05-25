@@ -28,9 +28,22 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>com.github.tomakehurst</groupId>
+            <artifactId>wiremock-standalone</artifactId>
+            <version>2.27.2</version>
+        </dependency>
+        <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>messages</artifactId>
-            <version>15.0.0</version>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.3.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.3.4</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
