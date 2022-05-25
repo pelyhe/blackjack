@@ -19,3 +19,21 @@ Fordított esetben (amennyiben az osztó lapjainak értéke nagyobb, mint a felh
 a játékos elveszti a feltett tétet.
 Az lapok értéke szám esetén értelemszerűen megegyezik a számmal, J, Q és K esetén ez az érték 10,
 A esetén pedig lehet 1 és 11 is, függően attól, hogy melyikkel jár jobban a kártya birtokosa.
+## Tesztelés
+Az alkalmazás indításakor a következő képernyő fogad (a szabályok leírása után): \
+![](kezdo.png) \
+A játékosok száma csak 1 és 6 között lehet, annál nagyobb érték nem elfogadható. Egy sztring beadása esetén
+szintén új bemenetet vár: \
+![](test1.png) \
+Miután a játékosok számának bekérése megtörtént, a játékosokhoz tartozó neveket kéri be a játék.
+Ennél a lépésnél azt teszteltem, hogy szóközökre, számokra, illetve speciális karakterekre hogyan reagál a
+játék. A sztringekre korábban hibát dobott az alkalmazás, ezt javítottam a BlackjackGame-ben egy if-else ág bevezetésével.\
+![](test2.png) \
+\
+Mint látható, az első játékos nevében több szóköz is szerepel, amiket ugyan úgy le tud kezelni a játék.
+A második játékos neve mögött szintén egy szóköz szerepel, valamint számokat kap. A harmadik játékos nevei
+pedig speciális karaktereket tartalmaz.
+Ahhoz, hogy a string-ekre és szóközökre is jól működjön a program, nekem kellett kisebb javításokat végeznem a projektben, 
+a Scanner objektumon egy useDelimeter("\n") függvényt meghívva.
+\
+\

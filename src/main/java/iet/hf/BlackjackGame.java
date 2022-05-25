@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class BlackjackGame {
 	
-	private Scanner ki = new Scanner(System.in);
+	private Scanner ki = new Scanner(System.in).useDelimiter("\n");
 	private int users; 
 	private Player[] players;
 	private Deck deck;
@@ -13,7 +13,7 @@ public class BlackjackGame {
 
 	// Starts game and displays the rules
 	public void initializeGame(){
-		String names;
+		String names = "";
 		System.out.println("Welcome to Blackjack!");
 		System.out.println("");
 		System.out.println("  BLACKJACK RULES: ");
@@ -29,12 +29,14 @@ public class BlackjackGame {
 		System.out.println("");
 		
 		// Gets the amount of players and creates them
-		do {
+		while (users > 6 || users < 1) {
 			System.out.print("How many people are playing (1-6)? ");
-			users = ki.nextInt();
-			
-
-		} while (users > 6 || users < 0);
+			if (ki.hasNextInt()) {
+				users = ki.nextInt();
+			} else {
+				ki.next();
+			}
+		}
 
 		players = new Player[users];
 		deck = new Deck();
@@ -42,7 +44,7 @@ public class BlackjackGame {
 		// Asks for player names and assigns them
 		for (int i = 0; i < users; i++) {
 			System.out.print("What is player " + (i + 1) + "'s name? ");
-			names = ki.next();
+			names += ki.next();
 			players[i] = new Player();
 			players[i].setName(names);
 		}
@@ -61,7 +63,10 @@ public class BlackjackGame {
 		for (int i =0; i < users; i++) {  	
 			if (players[i].getBank() > 0) {
 			do {
-				System.out.print("How much do you want to bet " + players[i].getName()  + (" (1-" + players[i].getBank()) + ")? " );
+				do {
+					System.out.print("How much do you want to bet " + players[i].getName()  + (" (1-" + players[i].getBank()) + ")? " );
+					ki.nextLine();
+				} while (!ki.hasNextInt());
 				betValue = ki.nextInt();
 				players[i].setBet(betValue);
 			} while (!( betValue > 0 && betValue <= players[i].getBank()));
