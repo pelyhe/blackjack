@@ -33,5 +33,5 @@ jobs:
       run: | 
         docker login -u $username -p $password
     - name: Build docker image
-        id: docker_build
-        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/iet-hazi:v1.0
+      id: docker_build
+      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/iet-hazi:v1.0
