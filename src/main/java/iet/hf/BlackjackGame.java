@@ -43,6 +43,7 @@ public class BlackjackGame {
 
 		// Asks for player names and assigns them
 		for (int i = 0; i < users; i++) {
+			names = "";
 			System.out.print("What is player " + (i + 1) + "'s name? ");
 			names += ki.next();
 			players[i] = new Player();

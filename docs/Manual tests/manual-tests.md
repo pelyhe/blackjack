@@ -55,3 +55,17 @@ enged tovább a játék: \
 Mint látható, enter/space billentyű lenyomásakor, hosszabb string beírásakor, vagy szám esetén is a ciklusban maradunk.
 **Azt, hogy enter után ne lépjen ki, én javítottam a hitOrStand() függvényben.**
 \
+Amennyiben több lesz a paklink értéke, mint 21, rögtön kiesik a játékos. Az ász érhet egyet, illetve 11-et is
+, a játék ezt úgy választja meg, hogy amennyiben 11-gyel túl nagy lenne az érték, egynek számolja,
+ez látszik a képen is alább: \
+![](test5.png) \
+A játék során előfordul, hogy az összes játékosnak elfogy a zsetonja. Ekkor a játéknak automatikusan vége, erre láthatunk
+példát alább: \
+![](test6.png) \
+Ha az egyik játékosnak fogynak csak el a zsetonjai, a másik játékos nyerte a mérkőzést, azonban ekkor még tovább játszhat az
+osztó ellen: \
+![](test7.png) \
+A játékosok az osztó ellen is ki tudnak esni: \
+![](test8.png) \
+Végül, alább az látszik, hogy amennyiben egy játékos valóban nyer/veszít, megváltozik a zsetonjainak értéke. \
+![](test9.png) \
