@@ -1,9 +1,9 @@
 package iet.hf;
 
+import io.cucumber.messages.internal.com.google.common.annotations.VisibleForTesting;
+
 import java.io.Serializable;
 import java.util.Random;
-import java.util.Random;
-import java.util.Scanner;
 
 public class Deck extends Exception implements Serializable
 {
@@ -11,7 +11,7 @@ public class Deck extends Exception implements Serializable
 	private int nextCardIndex;
 	
 
-	Card[] deck = new Card[52];
+	public Card[] deck = new Card[52];
 
 	public Deck(){
 
@@ -36,7 +36,9 @@ public class Deck extends Exception implements Serializable
 		}
 		nextCardIndex = 0;
 	}
-	private void isIndexGood(int index) throws InvalidDeckPositionException {
+
+	@VisibleForTesting
+	void isIndexGood(int index) throws InvalidDeckPositionException {
 		if (index < 0 || index > 51) {
 			throw new InvalidDeckPositionException(index);
 		}
@@ -53,7 +55,8 @@ public class Deck extends Exception implements Serializable
 	}
 
 
-	private void swapCards(int index1, int index2) throws InvalidDeckPositionException {	
+	@VisibleForTesting
+	void swapCards(int index1, int index2) throws InvalidDeckPositionException {
 		Card hold;
 
 		isIndexGood(index1);
@@ -97,4 +100,7 @@ public class Deck extends Exception implements Serializable
 		return deck[nextCardIndex++];
 	}
 
+	public void setNextCardIndex(int i) {
+		nextCardIndex=i;
+	}
 } //End class

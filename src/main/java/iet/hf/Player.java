@@ -4,15 +4,16 @@ import java.io.Serializable;
 
 public class Player implements Serializable
 {
-	
-	private int bank;
+
+    public static int initBank=100;
+    private int bank;
 	private int bet;
 	private String name;
 	private Hand hand;
 	
 	// Creates a player object
 	public Player() {
-		bank = 100;
+		bank = initBank;
 		hand = new Hand();
 		
 	}
