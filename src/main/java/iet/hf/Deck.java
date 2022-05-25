@@ -1,6 +1,7 @@
 package iet.hf;
 
-import io.cucumber.messages.internal.com.google.common.annotations.VisibleForTesting;
+
+import wiremock.com.google.common.annotations.VisibleForTesting;
 
 import java.io.Serializable;
 import java.util.Random;

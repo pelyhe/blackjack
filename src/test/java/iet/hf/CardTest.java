@@ -88,11 +88,6 @@ public class CardTest {
     }
 
     @Test
-    public void test(){
-
-    }
-
-    @Test
     public void testCompareSuit() throws InvalidCardValueException, InvalidCardSuitException {
         Card testCard1=new Card('S', 2);
         Card testCard2=new Card('H', 2);
