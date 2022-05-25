@@ -27,6 +27,11 @@
             <version>${junit-jupiter-api.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>messages</artifactId>
+            <version>15.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
