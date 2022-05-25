@@ -118,8 +118,8 @@ public class StepDefinitions {
 
     boolean c1Eqc2;
     boolean c1Eqc3;
-    @Given("{int} cards")
-    public void cards(int arg0) throws InvalidCardValueException, InvalidCardSuitException {
+    @Given("three cards to compare suit")
+    public void cards() throws InvalidCardValueException, InvalidCardSuitException {
         c1=new Card('H' , 1);
         c2=new Card('H' , 2);
         c3=new Card('C' , 3);
@@ -133,6 +133,45 @@ public class StepDefinitions {
 
     @Then("suit will be compared correctly")
     public void suitWillBeComparedCorrectly() {
+        Assert.assertTrue(c1Eqc2);
+        Assert.assertFalse(c1Eqc3);
+    }
+
+
+    @Given("three cards to compare value")
+    public void threeCards() throws InvalidCardValueException, InvalidCardSuitException {
+        c1=new Card('H' , 1);
+        c2=new Card('H' , 1);
+        c3=new Card('C' , 3);
+    }
+
+    @When("comparing values")
+    public void comparingValues() {
+        c1Eqc2=c1.compareValue(c2);
+        c1Eqc3=c1.compareValue(c3);
+    }
+
+    @Then("compare results will be correct")
+    public void compareResultsWillBeCorrect() {
+        Assert.assertTrue(c1Eqc2);
+        Assert.assertFalse(c1Eqc3);
+    }
+
+    @Given("three cards to compare")
+    public void threeCardsToCompare() throws InvalidCardValueException, InvalidCardSuitException {
+        c1=new Card('H' , 1);
+        c2=new Card('H' , 1);
+        c3=new Card('C' , 3);
+    }
+
+    @When("comparing two cards")
+    public void comparingTwoCards() {
+        c1Eqc2=c1.compareTo(c2);
+        c1Eqc3=c1.compareTo(c3);
+    }
+
+    @Then("compare result will be right")
+    public void compareResultWillBeRight() {
         Assert.assertTrue(c1Eqc2);
         Assert.assertFalse(c1Eqc3);
     }
