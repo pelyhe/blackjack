@@ -123,7 +123,7 @@ public class BlackjackGame {
 	// This code takes the user commands to hit or stand
 	public void hitOrStand() {
 		String command;
-		char c;
+		char c = ' ';
 		for (int i = 0; i < users; i++) {
 			if ( players[i].getBet() > 0 ) {
 				System.out.println();
@@ -133,7 +133,9 @@ public class BlackjackGame {
 					do {
 						System.out.print(players[i].getName() + " (H)it or (S)tand? ");
 						command = ki.next();
-						c = command.toUpperCase().charAt(0);
+						if (!command.isEmpty()) {
+							c = command.toUpperCase().charAt(0);
+						}
 					} while ( ! ( c == 'H' || c == 'S' ) );
 					if ( c == 'H' ) {
 						players[i].addCard(deck.nextCard());

@@ -27,13 +27,31 @@ szintén új bemenetet vár: \
 ![](test1.png) \
 Miután a játékosok számának bekérése megtörtént, a játékosokhoz tartozó neveket kéri be a játék.
 Ennél a lépésnél azt teszteltem, hogy szóközökre, számokra, illetve speciális karakterekre hogyan reagál a
-játék. A sztringekre korábban hibát dobott az alkalmazás, ezt javítottam a BlackjackGame-ben egy if-else ág bevezetésével.\
+játék. **A sztringekre korábban hibát dobott az alkalmazás, ezt javítottam a BlackjackGame-ben egy if-else ág bevezetésével.**\
 ![](test2.png) \
 \
 Mint látható, az első játékos nevében több szóköz is szerepel, amiket ugyan úgy le tud kezelni a játék.
 A második játékos neve mögött szintén egy szóköz szerepel, valamint számokat kap. A harmadik játékos nevei
 pedig speciális karaktereket tartalmaz.
-Ahhoz, hogy a string-ekre és szóközökre is jól működjön a program, nekem kellett kisebb javításokat végeznem a projektben, 
-a Scanner objektumon egy useDelimeter("\n") függvényt meghívva.
+**Ahhoz, hogy a string-ekre és szóközökre is jól működjön a program, nekem kellett kisebb javításokat végeznem a projektben**, 
+a Scanner objektumon egy useDelimeter("\n") függvényt meghívva.\
 \
+A következő lépés a tétek megadása. Itt is robosztus a szoftver, csak 1 és 100 közötti számokat fogad el.
+A 100-as felső határ onnan ered, hogy a játékosok kezdetben 100 zsetont kapnak, amivel fogadni tudnak.
+Mint látható, az intervallumon kívüli számokra, sztringekre, olyan sztringekre, melyek számmal kezdődnek
+(amelyek benne vannak az intervallumban) nem működik. \
+![](test3.png) \
+Amenyiben a játékosnak több, vagy kevesebb pénze lesz, mint a kezdeti alap (100), úgy más lesz a kiírandó 
+szöveg is: \
+![](test3.5.png) \
+\
+Ezután kiosztja a díler a kártyákat. A kiosztás teljesen random történik a pakliból. Természetesen,
+amennyiben egy lap kiosztásra került, kivételre kerül a pakliból, így nem lehet többször az adott
+játszma során kiosztani azt. \
+Ezután a játékosoknak egyenként dönteni kell, hogy tovább játszanak-e (Hit), vagy megállnak (Stand).
+Ezt a H, vagy az S betűk lenyomásával tehetik meg. Csak és kizárólag ezen betűk valamelyikét lenyomva
+enged tovább a játék: \
+![](test4.png) \
+Mint látható, enter/space billentyű lenyomásakor, hosszabb string beírásakor, vagy szám esetén is a ciklusban maradunk.
+**Azt, hogy enter után ne lépjen ki, én javítottam a hitOrStand() függvényben.**
 \
