@@ -82,4 +82,8 @@ public class Hand implements Serializable
 		int value = theHand[1].getValue();
 		return value == 1 || value >= 10;
 	}
+
+    public Card[] getTheHand() {
+		return this.theHand;
+    }
 } //End class
